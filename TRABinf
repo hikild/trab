@@ -1,0 +1,50 @@
+----------------------          MAIN           --------------------------------
+public class ValorCarro {
+
+    public static void main(String[] args) {
+        
+        Carro c1,c2,c3,c4,c5,c6,c7;
+        
+        c1 = new Carro("Chevrolet Ônix",36000,1400,11.8f,1600);
+        c2 = new Carro("Ford Fiesta",32000,1300,13.5f,1800);
+        c3 = new Carro("VW Fox",31000,1450,12.3f,1300);
+        c4 = new Carro("VW Polo",41000,1600,13.5f,1500);
+        c5 = new Carro("Hyundai HB20",40000,1200,11.6f,1200);
+        c6 = new Carro("Renault Sandero",30000,1300,12.8f,1900);
+        
+        
+        System.out.print("      Nome       | Custo        | Valor do Imposto |  Valor Km    | Valor Seguro| Custo Total |\n");
+        c1.imprime();
+        c2.imprime();
+        c3.imprime();
+        c4.imprime();
+        c5.imprime();
+        c6.imprime();
+    }
+    
+}
+
+ -------------------        CLASSE CARRO             ----------------------
+public class Carro {
+    
+    private String nome;
+    private float custo;
+    private float imposto;
+    private float consumo;
+    private float seguro;
+    private float total;
+    
+   public Carro(String nome, float custo, float imposto,float consumo, float seguro){
+       this.nome = nome;
+       this.custo = custo;
+       this.imposto = imposto;
+       this.consumo = (10000/consumo)*3.98f;
+       this.seguro = seguro;
+       total = custo + imposto + consumo + seguro;
+   }
+   
+   void imprime(){
+       System.out.printf("%16s | %12.2f | %16.2f | %12.2f | %12.2f| %12.2f|\n", nome,custo,imposto,consumo,seguro,total);
+   }
+    
+}
